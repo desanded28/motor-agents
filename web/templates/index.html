@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MOTOR·AGENTS // Autonomous Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+  <!-- engineering-paper dot grid + corner registration marks -->
+  <div class="surface" aria-hidden="true">
+    <div class="reg reg-tl"></div>
+    <div class="reg reg-tr"></div>
+    <div class="reg reg-bl"></div>
+    <div class="reg reg-br"></div>
+  </div>
+
+  <div class="topbar">
+    <div class="brand">
+      <!-- Generic automotive mark: precision-gauge arc with tick marks + center crosshair -->
+      <svg class="roundel" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+        <circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="0.75"/>
+        <!-- sweep arc — a "needle path" from 7 o'clock to 5 o'clock -->
+        <path d="M 6 22 A 11 11 0 1 1 26 22" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        <!-- gauge tick marks around the arc -->
+        <g stroke="currentColor" stroke-width="1" stroke-linecap="square">
+          <line x1="16" y1="3.5" x2="16" y2="6.5"/>
+          <line x1="25.8" y1="8.4" x2="23.7" y2="10.5"/>
+          <line x1="28.5" y1="16" x2="25.5" y2="16"/>
+          <line x1="3.5" y1="16" x2="6.5" y2="16"/>
+          <line x1="6.2" y1="8.4" x2="8.3" y2="10.5"/>
+        </g>
+        <!-- needle -->
+        <line x1="16" y1="16" x2="22" y2="10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <circle cx="16" cy="16" r="1.3" fill="currentColor"/>
+      </svg>
+      <div class="brand-name bmw-dot"></div>
+      <div class="brand-text">
+        <div class="brand-main"><span class="accent">MOTOR</span>·AGENTS</div>
+        <div class="brand-sub">AUTONOMOUS&nbsp;SYSTEMS · v0.2.0</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="#agent-deal" class="active"><span class="nav-idx">01</span>Deal·Checker</a>
+      <a href="#agent-config"><span class="nav-idx">02</span>Configurator</a>
+      <a href="#agent-hunter"><span class="nav-idx">03</span>Hunter</a>
+      <a href="#traces"><span class="nav-idx">—</span>Traces</a>
+    </nav>
+
+    <div class="right">
+      <div class="clock" id="sys-clock">00:00:00</div>
+      <span id="key-status" class="key-pill">checking…</span>
+    </div>
+  </div>
+
+  <main class="container">
+
+    <!-- ──────────────────────── HERO ──────────────────────── -->
+    <section class="hero">
+      <div class="hero-meta">
+        <span class="tag">WORKING SYSTEMS</span>
+        <span class="hair"></span>
+        <span class="tag">BUILT IN PUBLIC</span>
+      </div>
+
+      <h1 class="hero-title">
+        Three agents so I stop
+        <em>scrolling&nbsp;listings</em> manually.
+      </h1>
+
+      <p class="hero-sub">
+        I got tired of checking AutoScout24 every evening and redoing the BMW
+        configurator by hand. So I built agents that verify used-car prices,
+        recreate the new-car spec, and hunt the market — across BMW, Mercedes-Benz,
+        Audi, Porsche, Volkswagen, and Mini. Gemini tool-calling with live-streamed
+        reasoning and persistent trace logs.
+      </p>
+
+      <div class="brand-strip" aria-label="Supported brands">
+        <span class="brand-strip-label">SUPPORTED</span>
+        <span class="brand-strip-hair"></span>
+        <span class="brand-chip">BMW</span>
+        <span class="brand-chip">Mercedes-Benz</span>
+        <span class="brand-chip">Audi</span>
+        <span class="brand-chip">Porsche</span>
+        <span class="brand-chip">Volkswagen</span>
+        <span class="brand-chip">Mini</span>
+      </div>
+
+      <div class="hero-marker">
+        <span class="dot-live"></span>
+        <span>LIVE SYSTEM · STREAMING ENABLED</span>
+      </div>
+    </section>
+
+    <!-- ──────────────────────── STATS ──────────────────────── -->
+    <section class="stats">
+      <div class="stat">
+        <div class="stat-label"><span class="stat-idx">LST·01</span> LISTINGS INDEXED</div>
+        <div class="stat-value" id="stat-listings">—</div>
+        <div class="stat-foot">sqlite · dedupe on (source, external_id)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label"><span class="stat-idx">TRC·02</span> AGENT TRACES</div>
+        <div class="stat-value" id="stat-traces">—</div>
+        <div class="stat-foot">json · tool-call resolution</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label"><span class="stat-idx">MSR·03</span> MSRP CATALOG</div>
+        <div class="stat-value">6<span class="stat-unit">×</span></div>
+        <div class="stat-foot">brands · 200+ trims · 2019–2024</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label"><span class="stat-idx">EVL·04</span> TEST SUITE</div>
+        <div class="stat-value">71</div>
+        <div class="stat-foot">pytest · multi-brand · &lt;200ms</div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────── AGENT 01 ──────────────────────── -->
+    <section id="agent-deal" class="card">
+      <div class="card-head">
+        <div class="card-meta">
+          <span class="card-idx">01 / 03</span>
+          <span class="hair"></span>
+          <span class="pill">GEMINI·TOOL-CALLS</span>
+        </div>
+        <h2 class="card-title">Deal·<em>checker</em></h2>
+        <p class="muted">Paste a listing URL or a plain-text description for any supported marque. The agent detects the brand, extracts model + mileage + options, queries the MSRP catalog, applies depreciation, returns a 5-band verdict.</p>
+        <div class="status-rail" data-state="idle">
+          <span class="state-dot"></span>
+          <span class="state-label">IDLE</span>
+          <span class="state-sep">·</span>
+          <span class="state-hint">AWAITING INPUT</span>
+        </div>
+      </div>
+      <form class="form" onsubmit="return runDeal(event)">
+        <label class="field">
+          <span class="field-label">INPUT·01</span>
+          <input type="text" id="deal-input" placeholder="e.g. 2022 Audi RS 6 Avant · 38000 km · €95,000 · S line"
+                 value="2022 Audi RS 6 Avant, 38000 km, 95000 EUR, S line Exterior, Bang & Olufsen 3D Advanced" />
+        </label>
+        <button type="submit" id="deal-btn">
+          <span class="btn-label">EXECUTE</span>
+          <span class="btn-arrow">→</span>
+        </button>
+      </form>
+      <div class="agent-output" id="deal-output" hidden>
+        <div class="log-head">
+          <span class="log-head-label">TOOL·STREAM</span>
+          <span class="log-head-sep">·</span>
+          <span class="log-head-meta" id="deal-timer">00:00</span>
+        </div>
+        <div class="events" id="deal-events"></div>
+        <div class="final" id="deal-final"></div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────── AGENT 02 ──────────────────────── -->
+    <section id="agent-config" class="card">
+      <div class="card-head">
+        <div class="card-meta">
+          <span class="card-idx">02 / 03</span>
+          <span class="hair"></span>
+          <span class="pill">BROWSER·USE · VISION</span>
+        </div>
+        <h2 class="card-title">Configurator·<em>recreator</em></h2>
+        <p class="muted">Opens the matching brand's real configurator in headless Chromium — BMW, Mercedes-Benz, Audi, Porsche, VW, or Mini. Three-tier navigation: text labels → href slugs → Gemini vision on a grid-annotated screenshot.</p>
+        <div class="status-rail" data-state="idle">
+          <span class="state-dot"></span>
+          <span class="state-label">IDLE</span>
+          <span class="state-sep">·</span>
+          <span class="state-hint">CHROMIUM READY</span>
+        </div>
+      </div>
+      <form class="form" onsubmit="return runConfig(event)">
+        <label class="field">
+          <span class="field-label">INPUT·02</span>
+          <input type="text" id="config-input" placeholder="e.g. 2022 Mercedes-Benz C 300, Selenite Grey, AMG Line, Germany"
+                 value="2022 Mercedes-Benz C 300, Selenite Grey, AMG Line, Germany" />
+        </label>
+        <button type="submit" id="config-btn">
+          <span class="btn-label">EXECUTE</span>
+          <span class="btn-arrow">→</span>
+        </button>
+      </form>
+      <div class="agent-output" id="config-output" hidden>
+        <div class="log-head">
+          <span class="log-head-label">TOOL·STREAM</span>
+          <span class="log-head-sep">·</span>
+          <span class="log-head-meta">BROWSER·SESSION</span>
+        </div>
+        <div class="events" id="config-events"></div>
+        <div class="log-head log-head-alt">
+          <span class="log-head-label">CAPTURED·FRAMES</span>
+        </div>
+        <div class="screenshots-grid" id="config-screenshots"></div>
+        <div class="final" id="config-final"></div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────── AGENT 03 ──────────────────────── -->
+    <section id="agent-hunter" class="card">
+      <div class="card-head">
+        <div class="card-meta">
+          <span class="card-idx">03 / 03</span>
+          <span class="hair"></span>
+          <span class="pill">MULTI-STEP · PERSISTENT</span>
+        </div>
+        <h2 class="card-title">Hunter·<em>continuous</em></h2>
+        <p class="muted">Orchestrates crawl → score → rank → persist across sources and brands. Natural-language criteria parsing via Gemini; scoring and ranking remain deterministic Python.</p>
+        <div class="status-rail" data-state="idle">
+          <span class="state-dot"></span>
+          <span class="state-label">IDLE</span>
+          <span class="state-sep">·</span>
+          <span class="state-hint">MOCK·SOURCE LOADED</span>
+        </div>
+      </div>
+      <form class="form form-hunter" onsubmit="return runHunter(event)">
+        <label class="field">
+          <span class="field-label">QUERY·03</span>
+          <input type="text" id="hunter-input" placeholder="e.g. any AMG under 90k, 2021+, max 60,000 km"
+                 value="Any performance car under 80k EUR, 2020 or newer, max 80k km" />
+        </label>
+        <label class="check">
+          <input type="checkbox" id="hunter-real" />
+          <span class="check-box"></span>
+          <span class="check-label">INCLUDE·AUTOSCOUT24 <em>(unstable)</em></span>
+        </label>
+        <button type="submit" id="hunter-btn">
+          <span class="btn-label">EXECUTE</span>
+          <span class="btn-arrow">→</span>
+        </button>
+      </form>
+      <div class="agent-output" id="hunter-output" hidden>
+        <div class="log-head">
+          <span class="log-head-label">PIPELINE·STREAM</span>
+        </div>
+        <div class="events" id="hunter-events"></div>
+        <div class="log-head log-head-alt">
+          <span class="log-head-label">RANKED·RESULTS</span>
+        </div>
+        <div id="hunter-table"></div>
+        <div class="final" id="hunter-final"></div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────── TRACES ──────────────────────── -->
+    <section id="traces" class="card traces-card">
+      <div class="card-head card-head-row">
+        <div>
+          <div class="card-meta">
+            <span class="card-idx">— / LOG</span>
+          </div>
+          <h2 class="card-title">Run·<em>traces</em></h2>
+          <p class="muted">Every agent invocation persists as JSON — tool calls, arguments, results, durations, final output. The eval harness grades against these, not against final text.</p>
+        </div>
+        <button class="secondary" onclick="loadTraces()">
+          <span class="btn-arrow">↻</span>
+          REFRESH
+        </button>
+      </div>
+      <table class="traces-table">
+        <thead>
+          <tr>
+            <th>WHEN</th>
+            <th>AGENT</th>
+            <th>INPUT</th>
+            <th>TURNS</th>
+            <th>TOOLS</th>
+            <th>DUR.</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="traces-body">
+          <tr><td colspan="7" class="muted empty">— awaiting first execution —</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ──────────────────────── FOOTER ──────────────────────── -->
+    <footer class="footer">
+      <div class="footer-col">
+        <div class="footer-label">SYSTEM</div>
+        <div>MOTOR·AGENTS / v0.2.0</div>
+        <div class="footer-dim">pytest 71/71 · 6 brands supported</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">STACK</div>
+        <div>Gemini 2.5 · Playwright · Flask · SQLite</div>
+        <div class="footer-dim">Python 3.14 · Chromium headless</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-label">AUTHOR</div>
+        <div>Sander Floria</div>
+        <div class="footer-dim">Portfolio · 2026</div>
+      </div>
+      <div class="footer-col footer-col-mark">
+        <svg class="footer-roundel" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+          <circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="0.75"/>
+          <path d="M 6 22 A 11 11 0 1 1 26 22" fill="none" stroke="currentColor" stroke-width="1.2"/>
+          <line x1="16" y1="16" x2="22" y2="10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <circle cx="16" cy="16" r="1.3" fill="currentColor"/>
+        </svg>
+      </div>
+    </footer>
+  </main>
+
+  <dialog id="trace-dialog">
+    <div class="dialog-head">
+      <div>
+        <div class="dialog-kicker">TRACE·INSPECT</div>
+        <h3 id="trace-title">—</h3>
+      </div>
+      <button onclick="document.getElementById('trace-dialog').close()">
+        <span>CLOSE</span>
+        <span class="btn-arrow">×</span>
+      </button>
+    </div>
+    <pre id="trace-body"></pre>
+  </dialog>
+
+  <script src="/static/app.js"></script>
+  <script>
+    // System clock — adds ambient "real system" feel in the topbar
+    (function () {
+      function pad(n) { return String(n).padStart(2, '0'); }
+      function tick() {
+        const d = new Date();
+        const el = document.getElementById('sys-clock');
+        if (!el) return;
+        const off = -d.getTimezoneOffset() / 60;
+        const sign = off >= 0 ? '+' : '−';
+        const tz = 'UTC' + sign + pad(Math.abs(off));
+        el.textContent = pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds()) + ' ' + tz;
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
+
+    // Status-rail drive: flip to RUNNING/DONE around agent runs
+    (function () {
+      const cardFor = (btnId) => ({
+        'deal-btn':   { sec: document.getElementById('agent-deal'),   run: 'MODEL·RESOLVING',  done: 'COMPLETE' },
+        'config-btn': { sec: document.getElementById('agent-config'), run: 'NAVIGATING',       done: 'COMPLETE' },
+        'hunter-btn': { sec: document.getElementById('agent-hunter'), run: 'CRAWLING',         done: 'COMPLETE' },
+      })[btnId];
+
+      function setState(sec, state, hint) {
+        if (!sec) return;
+        const rail = sec.querySelector('.status-rail');
+        if (!rail) return;
+        rail.setAttribute('data-state', state);
+        rail.querySelector('.state-label').textContent = state.toUpperCase();
+        rail.querySelector('.state-hint').textContent = hint || '';
+      }
+
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('button[id]');
+        if (!btn) return;
+        const map = cardFor(btn.id);
+        if (!map) return;
+        setState(map.sec, 'running', map.run);
+        const iv = setInterval(() => {
+          if (!btn.disabled) {
+            setState(map.sec, 'complete', map.done);
+            clearInterval(iv);
+            setTimeout(() => setState(map.sec, 'idle', 'READY'), 6000);
+          }
+        }, 200);
+      });
+    })();
+  </script>
+</body>
+</html>

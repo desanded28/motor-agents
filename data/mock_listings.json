@@ -1,0 +1,258 @@
+{
+  "_note": "Seed listings used by hunter/sources.MockSource. Multi-brand (BMW, Mercedes-Benz, Audi, Porsche, Volkswagen, Mini) with mixed deal quality so ranking is varied and demos work across brands.",
+  "listings": [
+    {
+      "source": "mock", "external_id": "mk-0001",
+      "url": "https://example.com/mock/mk-0001",
+      "brand": "BMW", "model": "M340i", "trim": "M340i xDrive",
+      "model_year": 2021, "mileage_km": 42000, "asking_price_eur": 35900,
+      "options": ["M Sport Package", "Harman Kardon Sound", "Head-Up Display"],
+      "location": "Munich, DE", "posted_date": "2026-04-18"
+    },
+    {
+      "source": "mock", "external_id": "mk-0002",
+      "url": "https://example.com/mock/mk-0002",
+      "brand": "BMW", "model": "M340i", "trim": "M340i",
+      "model_year": 2022, "mileage_km": 28000, "asking_price_eur": 58500,
+      "options": ["M Sport Package", "Panoramic Roof"],
+      "location": "Hamburg, DE", "posted_date": "2026-04-19"
+    },
+    {
+      "source": "mock", "external_id": "mk-0003",
+      "url": "https://example.com/mock/mk-0003",
+      "brand": "BMW", "model": "330i", "trim": "330i",
+      "model_year": 2020, "mileage_km": 62000, "asking_price_eur": 28900,
+      "options": ["M Sport Package"],
+      "location": "Berlin, DE", "posted_date": "2026-04-17"
+    },
+    {
+      "source": "mock", "external_id": "mk-0004",
+      "url": "https://example.com/mock/mk-0004",
+      "brand": "BMW", "model": "M3 Competition", "trim": "M3 Competition",
+      "model_year": 2021, "mileage_km": 38000, "asking_price_eur": 64900,
+      "options": ["M Sport Package"],
+      "location": "Düsseldorf, DE", "posted_date": "2026-04-18"
+    },
+    {
+      "source": "mock", "external_id": "mk-0005",
+      "url": "https://example.com/mock/mk-0005",
+      "brand": "BMW", "model": "X5 xDrive40i", "trim": "X5 xDrive40i",
+      "model_year": 2020, "mileage_km": 72000, "asking_price_eur": 42500,
+      "options": ["Panoramic Roof", "Head-Up Display"],
+      "location": "Hamburg, DE", "posted_date": "2026-04-19"
+    },
+    {
+      "source": "mock", "external_id": "mk-0006",
+      "url": "https://example.com/mock/mk-0006",
+      "brand": "BMW", "model": "i4 M50", "trim": "i4 M50",
+      "model_year": 2022, "mileage_km": 31000, "asking_price_eur": 49500,
+      "options": ["Harman Kardon Sound"],
+      "location": "Hamburg, DE", "posted_date": "2026-04-20"
+    },
+
+    {
+      "source": "mock", "external_id": "mk-0101",
+      "url": "https://example.com/mock/mk-0101",
+      "brand": "Mercedes-Benz", "model": "C 300", "trim": "C 300",
+      "model_year": 2021, "mileage_km": 48000, "asking_price_eur": 38900,
+      "options": ["AMG Line", "Burmester 3D Sound", "Panoramic Roof"],
+      "location": "Stuttgart, DE", "posted_date": "2026-04-19"
+    },
+    {
+      "source": "mock", "external_id": "mk-0102",
+      "url": "https://example.com/mock/mk-0102",
+      "brand": "Mercedes-Benz", "model": "C 63 AMG S", "trim": "C 63 AMG S",
+      "model_year": 2023, "mileage_km": 18000, "asking_price_eur": 102500,
+      "options": ["AMG Performance Package", "Burmester High-End 4D Sound"],
+      "location": "Munich, DE", "posted_date": "2026-04-20"
+    },
+    {
+      "source": "mock", "external_id": "mk-0103",
+      "url": "https://example.com/mock/mk-0103",
+      "brand": "Mercedes-Benz", "model": "E 220d", "trim": "E 220d",
+      "model_year": 2020, "mileage_km": 88000, "asking_price_eur": 32900,
+      "options": ["AMG Line", "DIGITAL LIGHT"],
+      "location": "Frankfurt, DE", "posted_date": "2026-04-17"
+    },
+    {
+      "source": "mock", "external_id": "mk-0104",
+      "url": "https://example.com/mock/mk-0104",
+      "brand": "Mercedes-Benz", "model": "E 63 AMG S", "trim": "E 63 AMG S",
+      "model_year": 2021, "mileage_km": 42000, "asking_price_eur": 104500,
+      "options": ["AMG Performance Package", "Panoramic Roof"],
+      "location": "Hamburg, DE", "posted_date": "2026-04-18"
+    },
+    {
+      "source": "mock", "external_id": "mk-0105",
+      "url": "https://example.com/mock/mk-0105",
+      "brand": "Mercedes-Benz", "model": "GLC 300", "trim": "GLC 300",
+      "model_year": 2021, "mileage_km": 54000, "asking_price_eur": 42500,
+      "options": ["AMG Line", "Panoramic Roof"],
+      "location": "Cologne, DE", "posted_date": "2026-04-19"
+    },
+    {
+      "source": "mock", "external_id": "mk-0106",
+      "url": "https://example.com/mock/mk-0106",
+      "brand": "Mercedes-Benz", "model": "EQE 350", "trim": "EQE 350",
+      "model_year": 2023, "mileage_km": 22000, "asking_price_eur": 55900,
+      "options": ["AMG Line"],
+      "location": "Berlin, DE", "posted_date": "2026-04-20"
+    },
+
+    {
+      "source": "mock", "external_id": "mk-0201",
+      "url": "https://example.com/mock/mk-0201",
+      "brand": "Audi", "model": "A4 Avant 40 TDI", "trim": "A4 Avant 40 TDI",
+      "model_year": 2021, "mileage_km": 68000, "asking_price_eur": 31500,
+      "options": ["S line Exterior", "Bang & Olufsen Sound"],
+      "location": "Ingolstadt, DE", "posted_date": "2026-04-19"
+    },
+    {
+      "source": "mock", "external_id": "mk-0202",
+      "url": "https://example.com/mock/mk-0202",
+      "brand": "Audi", "model": "RS 4 Avant", "trim": "RS 4 Avant",
+      "model_year": 2021, "mileage_km": 38000, "asking_price_eur": 69500,
+      "options": ["S line Interior", "Panoramic Roof", "Matrix LED Headlights"],
+      "location": "Stuttgart, DE", "posted_date": "2026-04-20"
+    },
+    {
+      "source": "mock", "external_id": "mk-0203",
+      "url": "https://example.com/mock/mk-0203",
+      "brand": "Audi", "model": "RS 6 Avant", "trim": "RS 6 Avant",
+      "model_year": 2022, "mileage_km": 28000, "asking_price_eur": 102900,
+      "options": ["Bang & Olufsen 3D Advanced", "HD Matrix LED Digital", "22-inch Wheels"],
+      "location": "Munich, DE", "posted_date": "2026-04-18"
+    },
+    {
+      "source": "mock", "external_id": "mk-0204",
+      "url": "https://example.com/mock/mk-0204",
+      "brand": "Audi", "model": "Q5 40 TDI", "trim": "Q5 40 TDI",
+      "model_year": 2021, "mileage_km": 62000, "asking_price_eur": 38900,
+      "options": ["S line Exterior", "Technology Package"],
+      "location": "Hamburg, DE", "posted_date": "2026-04-17"
+    },
+    {
+      "source": "mock", "external_id": "mk-0205",
+      "url": "https://example.com/mock/mk-0205",
+      "brand": "Audi", "model": "e-tron GT", "trim": "e-tron GT",
+      "model_year": 2022, "mileage_km": 25000, "asking_price_eur": 72900,
+      "options": ["Bang & Olufsen Sound", "HD Matrix LED Digital"],
+      "location": "Berlin, DE", "posted_date": "2026-04-20"
+    },
+    {
+      "source": "mock", "external_id": "mk-0206",
+      "url": "https://example.com/mock/mk-0206",
+      "brand": "Audi", "model": "RS 3 Sportback", "trim": "RS 3 Sportback",
+      "model_year": 2022, "mileage_km": 31000, "asking_price_eur": 52500,
+      "options": ["S sport suspension", "Bang & Olufsen Sound"],
+      "location": "Frankfurt, DE", "posted_date": "2026-04-19"
+    },
+
+    {
+      "source": "mock", "external_id": "mk-0301",
+      "url": "https://example.com/mock/mk-0301",
+      "brand": "Porsche", "model": "911 Carrera S", "trim": "911 Carrera S",
+      "model_year": 2020, "mileage_km": 48000, "asking_price_eur": 98500,
+      "options": ["Sport Chrono Package", "Sport Exhaust", "21-inch Wheels"],
+      "location": "Munich, DE", "posted_date": "2026-04-19"
+    },
+    {
+      "source": "mock", "external_id": "mk-0302",
+      "url": "https://example.com/mock/mk-0302",
+      "brand": "Porsche", "model": "Macan S", "trim": "Macan S",
+      "model_year": 2021, "mileage_km": 42000, "asking_price_eur": 59500,
+      "options": ["Sport Chrono Package", "Bose Surround Sound"],
+      "location": "Stuttgart, DE", "posted_date": "2026-04-18"
+    },
+    {
+      "source": "mock", "external_id": "mk-0303",
+      "url": "https://example.com/mock/mk-0303",
+      "brand": "Porsche", "model": "Cayenne", "trim": "Cayenne",
+      "model_year": 2020, "mileage_km": 78000, "asking_price_eur": 58500,
+      "options": ["Panoramic Roof", "Bose Surround Sound"],
+      "location": "Hamburg, DE", "posted_date": "2026-04-17"
+    },
+    {
+      "source": "mock", "external_id": "mk-0304",
+      "url": "https://example.com/mock/mk-0304",
+      "brand": "Porsche", "model": "Taycan 4S", "trim": "Taycan 4S",
+      "model_year": 2021, "mileage_km": 36000, "asking_price_eur": 79500,
+      "options": ["Sport Chrono Package", "Panoramic Roof", "21-inch Wheels"],
+      "location": "Berlin, DE", "posted_date": "2026-04-20"
+    },
+    {
+      "source": "mock", "external_id": "mk-0305",
+      "url": "https://example.com/mock/mk-0305",
+      "brand": "Porsche", "model": "718 Cayman S", "trim": "718 Cayman S",
+      "model_year": 2021, "mileage_km": 28000, "asking_price_eur": 68500,
+      "options": ["Sport Chrono Package", "PASM Sport Suspension"],
+      "location": "Düsseldorf, DE", "posted_date": "2026-04-19"
+    },
+
+    {
+      "source": "mock", "external_id": "mk-0401",
+      "url": "https://example.com/mock/mk-0401",
+      "brand": "Volkswagen", "model": "Golf GTI", "trim": "Golf GTI",
+      "model_year": 2021, "mileage_km": 52000, "asking_price_eur": 24500,
+      "options": ["Harman Kardon Sound", "19-inch Wheels"],
+      "location": "Wolfsburg, DE", "posted_date": "2026-04-19"
+    },
+    {
+      "source": "mock", "external_id": "mk-0402",
+      "url": "https://example.com/mock/mk-0402",
+      "brand": "Volkswagen", "model": "Golf R", "trim": "Golf R",
+      "model_year": 2022, "mileage_km": 34000, "asking_price_eur": 35900,
+      "options": ["R-Line Interior", "Harman Kardon Sound", "Panoramic Sunroof"],
+      "location": "Munich, DE", "posted_date": "2026-04-20"
+    },
+    {
+      "source": "mock", "external_id": "mk-0403",
+      "url": "https://example.com/mock/mk-0403",
+      "brand": "Volkswagen", "model": "Tiguan 2.0 TDI", "trim": "Tiguan 2.0 TDI",
+      "model_year": 2021, "mileage_km": 72000, "asking_price_eur": 25500,
+      "options": ["R-Line Exterior", "Travel Assist"],
+      "location": "Hamburg, DE", "posted_date": "2026-04-18"
+    },
+    {
+      "source": "mock", "external_id": "mk-0404",
+      "url": "https://example.com/mock/mk-0404",
+      "brand": "Volkswagen", "model": "ID.4 GTX", "trim": "ID.4 GTX",
+      "model_year": 2023, "mileage_km": 22000, "asking_price_eur": 42500,
+      "options": ["Harman Kardon Sound", "20-inch Wheels"],
+      "location": "Berlin, DE", "posted_date": "2026-04-20"
+    },
+    {
+      "source": "mock", "external_id": "mk-0405",
+      "url": "https://example.com/mock/mk-0405",
+      "brand": "Volkswagen", "model": "Touareg R", "trim": "Touareg R",
+      "model_year": 2022, "mileage_km": 42000, "asking_price_eur": 72500,
+      "options": ["Leather Package", "Adaptive Chassis Control DCC", "20-inch Wheels"],
+      "location": "Stuttgart, DE", "posted_date": "2026-04-19"
+    },
+
+    {
+      "source": "mock", "external_id": "mk-0501",
+      "url": "https://example.com/mock/mk-0501",
+      "brand": "Mini", "model": "Cooper S 3-door", "trim": "Cooper S 3-door",
+      "model_year": 2021, "mileage_km": 38000, "asking_price_eur": 22900,
+      "options": ["Chili Pack", "Harman Kardon Sound"],
+      "location": "Munich, DE", "posted_date": "2026-04-19"
+    },
+    {
+      "source": "mock", "external_id": "mk-0502",
+      "url": "https://example.com/mock/mk-0502",
+      "brand": "Mini", "model": "John Cooper Works 3-door", "trim": "John Cooper Works 3-door",
+      "model_year": 2021, "mileage_km": 28000, "asking_price_eur": 29500,
+      "options": ["JCW Trim", "Harman Kardon Sound"],
+      "location": "Cologne, DE", "posted_date": "2026-04-20"
+    },
+    {
+      "source": "mock", "external_id": "mk-0503",
+      "url": "https://example.com/mock/mk-0503",
+      "brand": "Mini", "model": "Countryman JCW", "trim": "Countryman JCW",
+      "model_year": 2022, "mileage_km": 31000, "asking_price_eur": 38500,
+      "options": ["Chili Pack", "Panoramic Sunroof"],
+      "location": "Hamburg, DE", "posted_date": "2026-04-19"
+    }
+  ]
+}

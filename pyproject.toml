@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "motor-agents"
+version = "0.2.0"
+description = "Three Gemini tool-calling agents that streamline used-car shopping across BMW, Mercedes-Benz, Audi, Porsche, Volkswagen, and Mini."
+requires-python = ">=3.10"
+dependencies = [
+  "google-genai>=1.0",
+  "python-dotenv>=1.0",
+  "requests>=2.31",
+  "beautifulsoup4>=4.12",
+  "playwright>=1.40",
+  "flask>=3.0",
+  "Pillow>=10.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra -q"

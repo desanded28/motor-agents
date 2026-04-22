@@ -1,0 +1,20 @@
+.env
+.env.local
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+.claude/
+
+# runtime artifacts (regenerable, but excluded to keep the repo small)
+hunter.db
+traces/*.json
+screenshots/*.png
+evals/results/*.json
+
+# IDE
+.vscode/
+.idea/
+.DS_Store

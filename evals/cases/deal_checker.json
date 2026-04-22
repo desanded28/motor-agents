@@ -1,0 +1,54 @@
+{
+  "_note": "Eval cases for Agent 1. Each case: a synthetic car + expected verdict band. Grader pulls verdict from the agent's trace (compute_verdict tool call), not from the final text.",
+  "cases": [
+    {
+      "id": "steal-m340i",
+      "input": "2021 BMW M340i xDrive, 42000 km, asking 35900 EUR, M Sport Package, Harman Kardon Sound",
+      "expected_verdict_in": ["STEAL", "GOOD DEAL"],
+      "expected_model": "M340i",
+      "why": "M340i depreciates slowly, clean mileage, priced well below market"
+    },
+    {
+      "id": "fair-330i",
+      "input": "2020 BMW 330i, 62000 km, asking 27000 EUR, M Sport Package",
+      "expected_verdict_in": ["FAIR", "GOOD DEAL"],
+      "expected_model": "330i",
+      "why": "Typical 2020 330i pricing at ~5y old"
+    },
+    {
+      "id": "overpriced-520d",
+      "input": "2020 BMW 520d, 95000 km, asking 39900 EUR, Comfort Package",
+      "expected_verdict_in": ["OVERPRICED", "RIP-OFF"],
+      "expected_model": "520d",
+      "why": "2020 520d with high miles should sell ~32k, not 40k"
+    },
+    {
+      "id": "ripoff-320i",
+      "input": "2019 BMW 320i, 110000 km, asking 35000 EUR",
+      "expected_verdict_in": ["RIP-OFF"],
+      "expected_model": "320i",
+      "why": "7-year-old 320i with heavy miles, fair is ~14k-16k"
+    },
+    {
+      "id": "m3-competition-fair",
+      "input": "2022 BMW M3 Competition, 28000 km, asking 82000 EUR, M Sport Package",
+      "expected_verdict_in": ["FAIR", "GOOD DEAL"],
+      "expected_model": "M3 Competition",
+      "why": "M-cars hold value, low mileage"
+    },
+    {
+      "id": "x5-xdrive40i-overpriced",
+      "input": "2020 BMW X5 xDrive40i, 78000 km, asking 65000 EUR",
+      "expected_verdict_in": ["OVERPRICED", "RIP-OFF"],
+      "expected_model": "X5 xDrive40i",
+      "why": "5-year-old X5 40i with 78k km fair is ~45-50k"
+    },
+    {
+      "id": "i4-edrive40-fair",
+      "input": "2022 BMW i4 eDrive40, 35000 km, asking 38500 EUR",
+      "expected_verdict_in": ["FAIR", "GOOD DEAL", "STEAL"],
+      "expected_model": "i4 eDrive40",
+      "why": "EV depreciation hits i4 hard; 38.5k for 2022 model is on market"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "_note": "Eval cases for Agent 3 (Hunter). Grades the parsed Criteria + top-deal logic. Runs deterministically against the mock source — no LLM needed.",
+  "cases": [
+    {
+      "id": "m340i-filter",
+      "criteria_input": {"model_contains": "M340i"},
+      "expect_min_results": 2,
+      "expect_all_match_model": "M340i",
+      "why": "Mock dataset has 2 M340i listings"
+    },
+    {
+      "id": "under-40k",
+      "criteria_input": {"max_price_eur": 40000},
+      "expect_all_under_price": 40000,
+      "expect_min_results": 3,
+      "why": "Should filter to cars <=40k"
+    },
+    {
+      "id": "recent-only",
+      "criteria_input": {"min_year": 2022},
+      "expect_all_min_year": 2022,
+      "why": "Only 2022+ model years"
+    },
+    {
+      "id": "low-mileage",
+      "criteria_input": {"max_mileage_km": 40000},
+      "expect_all_under_mileage": 40000,
+      "why": "Only low-mileage cars"
+    },
+    {
+      "id": "top-deal-is-steal-or-good",
+      "criteria_input": {},
+      "top_deal_verdict_in": ["STEAL", "GOOD DEAL"],
+      "why": "After ranking, the #1 deal should have a positive verdict"
+    },
+    {
+      "id": "ranking-sorted-correctly",
+      "criteria_input": {},
+      "check_ranking_descending_by_savings": true,
+      "why": "Top-10 output must be sorted by savings descending"
+    }
+  ]
+}

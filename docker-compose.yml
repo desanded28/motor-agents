@@ -1,0 +1,16 @@
+services:
+  bmw-agents:
+    build: .
+    ports:
+      - "8001:8001"
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - SMTP_HOST=${SMTP_HOST:-}
+      - SMTP_PORT=${SMTP_PORT:-587}
+      - SMTP_USER=${SMTP_USER:-}
+      - SMTP_PASSWORD=${SMTP_PASSWORD:-}
+    volumes:
+      - ./traces:/app/traces
+      - ./screenshots:/app/screenshots
+      - ./hunter.db:/app/hunter.db
+    restart: unless-stopped
