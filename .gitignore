@@ -6,15 +6,15 @@ __pycache__/
 .pytest_cache/
 .venv/
 venv/
-.claude/
+LINKEDIN_POST.md
 
-# runtime artifacts (regenerable, but excluded to keep the repo small)
+# runtime artifacts (regenerable, excluded to keep the repo small)
 hunter.db
 traces/*.json
 screenshots/*.png
 evals/results/*.json
 
-# IDE
+# IDE / OS
 .vscode/
 .idea/
 .DS_Store
