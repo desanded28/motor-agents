@@ -1,5 +1,7 @@
 # Motor Agents
 
+![Motor Agents dashboard](docs/screenshots/01-hero.png)
+
 I got tired of scrolling AutoScout24 every evening trying to work out whether a used M340i was priced fairly, then hopping over to bmw.de to redo the configurator to see what the same car costs new. Same tedious workflow every single time — find listing, guess at fair value, look up new-car MSRP, compare, decide.
 
 So I built three agents to do it for me. And since I wanted to actually learn how agents work (not just wire up a chatbot), I built them with real tool-calling, live-streamed reasoning, persistent trace logs, and a proper test suite.
@@ -96,6 +98,8 @@ you can just grep it.
 
 ### Agent 1 — Deal Checker
 
+![Deal Checker running, tool-call stream and agent report](docs/screenshots/02-deal-checker.png)
+
 **Tools:** `fetch_listing`, `lookup_msrp`, `estimate_fair_value`, `compute_verdict`
 
 The MSRP lookup is brand-aware. It auto-detects the brand from the query
@@ -136,6 +140,8 @@ specific color by name (e.g. "Alpine White" → BMW internal code `P0300`) and v
 the selection by reading the updated configurator URL.
 
 ### Agent 3 — Used-Car Hunter
+
+![Hunter with ranked deals across 6 brands](docs/screenshots/03-hunter-ranked.png)
 
 **Tools:** `parse_criteria`, `list_sources`, `search_source`, `score_listings`,
 `save_to_db`, `rank_top`, `render_console_report`, `send_email_report`
